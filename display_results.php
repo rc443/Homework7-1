@@ -16,18 +16,11 @@
 		$wants_updates = 'No';
 	}
 
+	$contact_via = filter_input(INPUT_POST, 'contact_via');
 
-
-
-
-
-    // get the rest of the data for the form
-
-    // for the heard_from radio buttons,
-    // display a value of 'Unknown' if the user doesn't select a radio button
-
-    // for the wants_updates check box,
-    // display a value of 'Yes' or 'No'
+	$comments = filter_input(INPUT_POST, 'contact_via');
+	$comments = htmlspecialchars($comments);
+	$comments = n12br( $comments, false);
 ?>
 <!DOCTYPE html>
 <html>
