@@ -1,6 +1,16 @@
 <?php
     // get the data from the form
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password');
+    $phone = filter_input(INPUT_POST, 'phone');
+
+    $heard_from = filter_input(INPUT_POST, 'heard_from');
+    if ($heard_from === NULL) {
+    	$heard_from = 'Unkown';
+	}
+
+
+
 
     // get the rest of the data for the form
 
@@ -24,22 +34,24 @@
         <span><?php echo htmlspecialchars($email); ?></span><br>
 
         <label>Password:</label>
-        <span><!-- add PHP code here--></span><br>
+        <span><?php echo htmlspecialchars($password); ?></span><br>
 
         <label>Phone Number:</label>
-        <span></span><br>
+        <span><?php echo htmlspecialchars($phone);  ?></span><br>
 
         <label>Heard From:</label>
-        <span></span><br>
+        <span><?php echo htmlspecialchars($heard_from); ?></span><br>
 
         <label>Send Updates:</label>
-        <span></span><br>
+        <span><?php echo $wants_updates;  ?></span><br>
 
         <label>Contact Via:</label>
-        <span></span><br><br>
+        <span><?php echo htmlspecialchars($contact_via);  ?></span><br><br>
 
         <span>Comments:</span><br>
-        <span></span><br>        
+        <span><?php echo $comments;  ?></span><br>        
+
+	<p>&nbsp;</p>
     </main>
 </body>
 </html>
