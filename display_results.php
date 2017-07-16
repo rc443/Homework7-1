@@ -9,6 +9,15 @@
     	$heard_from = 'Unkown';
 	}
 
+    $wants_updates = $_POST['wants_updates'];
+    If (isset($wants_updates)) {
+    	$wants_updates = 'Yes';
+	} else {
+		$wants_updates = 'No';
+	}
+
+
+
 
 
 
